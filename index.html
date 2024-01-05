@@ -37,12 +37,11 @@
         tabindex="0">
         <h3>Image Details</h3>
 
-        <input type="file" id="upload" name="detailFile" onchange="previewDetailImage()" hidden />
+        <input type="file" id="upload" name="detailFile" onchange="previewDetailImage()" hidden/>
         <label for="upload">Upload Image</label>
 
-
         <div class="images" style="display: none;">
-          <div class="original" style="display: none; ">
+          <div class="detail" style="display: none; ">
             <canvas></canvas>
           </div>
         </div>
@@ -92,7 +91,12 @@
       <!-- Tabs Hide Text -->
       <div class="tab-pane fade" id="pills-encode" role="tabpanel" aria-labelledby="pills-encode-tab" tabindex="0">
         <div>
-          <h2>Encode message</h2>
+          <h3>Hide Text</h3>
+
+          <input type="file" id="upload" name="baseFile" onchange="previewEncodeImage()" hidden />
+          <label for="upload">Upload Image</label>
+
+          <!-- <h2>Encode message</h2>
           <p class="alert alert-info">
             To encode a message into an image, choose the image you want to use, enter your text and hit the
             <strong>Encode</strong> button. <br />
@@ -103,9 +107,7 @@
             happens within your browser.
           </p>
           <form class="form">
-            <div class="form-group">
-              <input class="form-control" type="file" name="baseFile" onchange="previewEncodeImage()">
-            </div>
+            
 
             <div class="form-group">
               <textarea class="form-control message" rows="3" placeholder="Enter your message here"></textarea>
@@ -114,7 +116,7 @@
             <div class="form-group">
               <button class="encode btn btn-default pull-right" onclick="encodeMessage()">Encode</button>
             </div>
-          </form>
+          </form> -->
           <div class="clearfix"></div>
         </div>
 
@@ -143,7 +145,12 @@
       <!-- Tabs Extract Text -->
       <div class="tab-pane fade" id="pills-decode" role="tabpanel" aria-labelledby="pills-decode-tab" tabindex="0">
         <div>
-          <h2>Decode image</h2>
+          <h3>Extract Text</h3>
+
+          <input type="file" id="upload" name="decodeFile" onchange="previewDecodeImage()" hidden/>
+          <label for="upload">Upload Image</label>
+
+          <!-- <h2>Decode image</h2>
           <p class="alert alert-info">
             To decode a hidden message from an image, just choose an image and hit the <strong>Decode</strong>
             button.<br /><br />
@@ -157,7 +164,7 @@
             <div class="form-group">
               <button class="decode btn btn-default pull-right" onclick="decodeMessage()">Decode</button>
             </div>
-          </form>
+          </form> -->
           <div class="clearfix"></div>
         </div>
         <div class="binary-decode" style="display: none;">

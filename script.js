@@ -24,12 +24,9 @@ function previewEncodeImage() {
 
 function previewDetailImage() {
   var file = document.querySelector("input[name=detailFile]").files[0];
-
-  $(".images .nulled").hide();
-  $(".images .message").hide();
-
-  previewImage(file, ".original canvas", function () {
-    $(".images .original").fadeIn();
+  
+  previewImage(file, ".detail canvas", function () {
+    $(".images .detail").fadeIn();
     $(".images").fadeIn();
   });
 }
