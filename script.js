@@ -11,14 +11,20 @@ function previewDecodeImage() {
 }
 
 function previewEncodeImage() {
-  var file = document.querySelector("input[name=baseFile]").files[0];
+  // var file = document.querySelector("input[name=encodeFile]").files[0];
 
-  $(".images .nulled").hide();
-  $(".images .message").hide();
+  // $(".images .nulled").hide();
+  // $(".images .message").hide();
 
+  // previewImage(file, ".original canvas", function () {
+  //   $(".images .original").fadeIn();
+  //   $(".images").fadeIn();
+  // });
+  var file = document.querySelector("input[name=encodeFile]").files[0];
+  
   previewImage(file, ".original canvas", function () {
-    $(".images .original").fadeIn();
-    $(".images").fadeIn();
+    $(".images2 .original").fadeIn();
+    $(".images2").fadeIn();
   });
 }
 
@@ -135,7 +141,7 @@ function encodeMessage() {
 
   $(".binary").fadeIn();
   $(".images .nulled").fadeIn();
-  $(".images .message").fadeIn();
+  $(".images2 .message").fadeIn();
 }
 
 function decodeMessage() {
@@ -171,6 +177,9 @@ function decodeMessage() {
 
     output += String.fromCharCode(c);
   }
+
+  // output = output.replace(/[^\x00-\x7F]/g,"");
+  output = output.replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, '')
 
   $(".binary-decode textarea").text(output);
   $(".binary-decode").fadeIn();
